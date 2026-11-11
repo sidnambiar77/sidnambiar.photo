@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sid Nambiar</title>
+<style>
+  :root { --ink: #141414; --mute: #8a8a8a; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    color: var(--ink);
+    font: 13px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+  header {
+    position: fixed; inset: 0 0 auto 0;
+    display: flex; justify-content: space-between;
+    padding: 22px 28px;
+    background: rgba(255,255,255,0.92);
+    z-index: 2;
+  }
+  header a { color: inherit; text-decoration: none; }
+  header span { color: var(--mute); }
+  main { padding: 0 28px; }
+  figure {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 100vh; min-height: 100svh;
+    padding: 64px 0 24px;
+  }
+  .frame { display: inline-block; }
+  img {
+    display: block;
+    max-width: min(1100px, calc(100vw - 56px));
+    max-height: calc(100vh - 150px);
+    width: auto; height: auto;
+    opacity: 0; transition: opacity .8s ease;
+  }
+  img.in { opacity: 1; }
+  figcaption {
+    margin-top: 10px;
+    color: var(--mute);
+    font-variant-numeric: tabular-nums;
+  }
+  footer {
+    display: flex; justify-content: space-between;
+    padding: 40px 28px 28px; color: var(--mute);
+  }
+  @media (max-width: 600px) {
+    header { padding: 16px 18px; }
+    main { padding: 12vh 18px 0; }
+    img { max-width: calc(100vw - 36px); max-height: 80vh; }
+    figure { min-height: 0; padding: 0; margin-bottom: 14vh; }
+    footer { padding: 0 18px 20px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <a href="#top">Sid Nambiar</a>
+  <span>Photographs</span>
+</header>
+
+<main id="top">
+  <figure><img src="img/01-window.jpg" width="2000" height="1643" alt="A small window cut into a pale wall, black and white"><figcaption>01</figcaption></figure>
+  <figure><img src="img/02-tubes.jpg" width="2000" height="2000" alt="Stacked cardboard tubes holding rolled paper" loading="lazy"><figcaption>02</figcaption></figure>
+  <figure><img src="img/03-chandelier.jpg" width="1333" height="2000" alt="Turquoise glass lamps on a chandelier, seen from below" loading="lazy"><figcaption>03</figcaption></figure>
+  <figure><img src="img/04-wheel.jpg" width="1333" height="2000" alt="Gold and chrome wire wheel on a green lowrider" loading="lazy"><figcaption>04</figcaption></figure>
+  <figure><img src="img/05-water.jpg" width="1333" height="2000" alt="Tree reflections and a rock in shallow water" loading="lazy"><figcaption>05</figcaption></figure>
+  <figure><img src="img/06-hoop.jpg" width="2000" height="1333" alt="Basketball hoop against a weathered wall and bougainvillea" loading="lazy"><figcaption>06</figcaption></figure>
+  <figure><img src="img/07-hill.jpg" width="1600" height="2000" alt="A person sitting on a flowered hillside above the city, black and white" loading="lazy"><figcaption>07</figcaption></figure>
+  <figure><img src="img/08-cablecar.jpg" width="2000" height="1335" alt="Cable car operators at night in Chinatown" loading="lazy"><figcaption>08</figcaption></figure>
+  <figure><img src="img/09-florist.jpg" width="2000" height="1335" alt="A florist working at a cluttered counter, framed by flowers" loading="lazy"><figcaption>09</figcaption></figure>
+  <figure><img src="img/10-playground.jpg" width="2000" height="2000" alt="Three kids posing on a playground climbing structure" loading="lazy"><figcaption>10</figcaption></figure>
+</main>
+
+<footer>
+  <span>&copy; Sid Nambiar</span>
+  <a href="#top" style="color:inherit;text-decoration:none">Top</a>
+</footer>
+
+<script>
+  document.querySelectorAll('img').forEach(function (img) {
+    var show = function () { img.classList.add('in'); };
+    if (img.complete && img.naturalWidth) show(); else img.addEventListener('load', show);
+  });
+</script>
+</body>
+</html>
